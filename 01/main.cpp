@@ -1,17 +1,9 @@
-#include <cstdio>
-#include "Money.h"
+#include <Windows.h>
+#include "Price.h"
 
 int main()
 {
-    // read pairs: hours, copecks and a multiplier until EOF
-    Price p;
-    int q;
-
-    while (scanf("%d %hd %d", &p.hr, &p.cop, &q) == 3)
-    {
-        Price result = mult(p, q);
-        printP(result);
-    }
-
-    return 0;
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
+    processCheque("input.txt");
 }
