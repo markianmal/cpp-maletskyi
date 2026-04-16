@@ -2,7 +2,7 @@
 #include "Price.h"
 #include <cstdio>
 
-void add(Price &target, const Price &other)
+void add(Price &target, Price &other)
 {
     target.hryvnia += other.hryvnia;
     target.kopecks += other.kopecks;
@@ -28,7 +28,7 @@ void roundToTen(Price &p)
     }
 }
 
-void print(const Price &p)
+void print(Price &p)
 {
 
     printf("%d грн %02d коп", p.hryvnia, p.kopecks);
@@ -62,8 +62,6 @@ void processCheque(const char *filename)
                 multiply(cur, qty);
                 add(total, cur);
             }
-        
-        
         }
     }
     fclose(f);
